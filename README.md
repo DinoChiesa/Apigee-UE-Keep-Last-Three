@@ -1,10 +1,10 @@
 # Apigee Tampermonkey: Clean all but last three Proxy Revisions
 
 This is a [Tampermonkey](https://tampermonkey.net/) script that tweaks
-the [Apigee](https://apigee.com) UI to clean all but the most recent three
-revisions of an API Proxy.
+the [Apigee](https://apigee.com) UI to cull revisions
+of an API Proxy. Allowing you to keep 1, 3, or 5 most recent revisions.
 
-![screengrab](img/keep-last-three.gif)
+![screengrab](img/cull-proxy-revisions.gif)
 
 
 ## What is Tampermonkey?
@@ -26,13 +26,14 @@ script.
 ## OK, How does this specific Tweak work?
 
 The script registers for apigee.com . When it finds that the current page
-displays the proxy overview, it adds a button to the proxy editor toolbar,
-labeled "Clean". When clicked, that button selects all but the final 3
-revisions, and removes each revision if it is not deployed. 
+displays the proxy overview, it adds a dropdown button to the proxy editor toolbar,
+labeled "Cull". Click it, and then you get a list of selections.  Select one of
+those, and the logic will remove all but the most recent N proxy revisions.  It
+only removes revisions that are not deployed.
 
 Then, it refreshes the page.
 
-The script is set to run after a brief delay after initial page load.
+The script is set to insert the new button after a brief delay after initial page load.
 
 ## Installing the script
 
@@ -44,7 +45,7 @@ Then,
 1 Use the tampermonkey menu to add a new script.
   <img src="img/tm-add-new-script.png" width='308px'>
 
-2. copy-paste the [keep-last-three.user.js](lib/keep-last-three.user.js) script into place.
+2. copy-paste the [cull-proxy-revisions.user.js](lib/cull-proxy-revisions.user.js) script into place.
 
 3. Reload the browser tab that is displaying the proxy.
 
