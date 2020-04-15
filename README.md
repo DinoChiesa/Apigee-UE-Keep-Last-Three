@@ -61,3 +61,7 @@ This user script is licensed under the [Apache 2.0 license](LICENSE).
 
 This user script works with Firefox, and Chrome on MacOS X.
 It *ought to* work just fine on other combinations of browsers.
+
+## Bugs
+
+The Cull button does not appear on the sharedflows overview tab.
